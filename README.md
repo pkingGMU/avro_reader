@@ -19,7 +19,7 @@ Click <Code> Download as ZIP or Clone Repo
 ## Authors
 
   - **Patrick King** - -
-    [PurpleBooth](https://github.com/pkingGMU)
+    [Patrick's GitHub](https://github.com/pkingGMU)
 
 ## License
 
