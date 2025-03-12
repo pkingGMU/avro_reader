@@ -60,6 +60,7 @@ def avro_to_dataframe(current_file):
 
     df_eda['ts'] = timestamp
     df_eda['EDA'] = eda['values']
+    df_eda['EDA'] = df_eda['EDA'] * 1000000
 
     # Temperature
     tmp = data['rawData']['temperature']
