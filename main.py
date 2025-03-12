@@ -14,6 +14,7 @@ avro_file_folder_dir = pwd + '/Data/'
 output_dir = pwd + '/Output'
 
 thirty_min_files = os.listdir(avro_file_folder_dir)
+thirty_min_files.remove('.gitkeep')
 
 # List to hold filenames and their associated Unix timestamps
 sorting_list = []
