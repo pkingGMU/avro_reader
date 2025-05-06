@@ -3,11 +3,32 @@ clc
 clear
 
 % Paths
-data_folder_path = fullfile(pwd, 'data');
+data_folder_path = fullfile(pwd, 'output');
 data_file = fullfile(data_folder_path, 'eda.csv');
 
 % Reading in csv
-raw_data = readmatrix(data_file);
+full_raw_data = readmatrix(data_file);
+
+% Edit THESE TIMES
+start_unix = 1744730277151376;
+end_unix = 1744730278139142;
+
+% Edit this FILE NAME
+file_name = 'trial1_test';
+
+timestamps = full_raw_data(:, 1);
+
+[~, start_idx] = min(abs(timestamps - start_unix));
+
+[~, end_idx] = min(abs(timestamps - end_unix));
+
+if start_idx > end_idx
+    temp = start_idx;
+    start_idx = end_idx;
+    end_idx = temp;
+end
+
+raw_data = full_raw_data(start_idx:end_idx, :);
 
 % Add fake zero column
 zero_col = zeros(height(raw_data), 1);
@@ -33,7 +54,7 @@ data.event.name = [];
 data.event.extension = [];
 
 % Save mat file
-save("eda_preprocess", "data");
+save(file_name, "data");
 
 
 
