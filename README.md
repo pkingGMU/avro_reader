@@ -12,7 +12,7 @@ Click <Code> Download as ZIP or Clone Repo
 
 ## Getting Started
 
-1. Downlaod .avro raw files from Cyberbucks SSH or AWS CLI for 1 Subject
+1. Downlaod .avro raw files from Cyberduck SSH or AWS CLI for 1 Subject
 2. Move .avro files to the provided data folder
 3. Run main.m
 4. Multiple CSV's will show up in the Output folder.
