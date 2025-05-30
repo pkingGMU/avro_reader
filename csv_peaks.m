@@ -39,14 +39,6 @@ raw_data = full_raw_data(start_idx:end_idx, :) / 1000000;
 
 raw_data(raw_data(:,2) <= 0, 2) = 0;
 
-% Add fake zero column
-zero_col = zeros(height(raw_data), 1);
-
-% Combine zero column to data 
-data_zero = [raw_data zero_col];
-
-% Remove random negative
-data_zero(data_zero(:,2) <= 0, 2) = 0;
 
 % Parameters
 order = 3;              
