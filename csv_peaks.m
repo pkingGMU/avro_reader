@@ -9,14 +9,12 @@ data_file = fullfile(data_folder_path, 'eda.csv');
 full_raw_data = readmatrix(data_file);
 
 % Edit THESE TIMES
-%start_unix = 1746563941060330; % Beginning of Low Trial
-%end_unix = 1746563945810330; % Beginning of Low Trial
 
-%start_unix = 1747323829084160; % Beginning of High Trial
-%end_unix = 1747323833834170; % Beginning of High Trials
+%start_unix = 1746563941060330; % Beginning of Start High Trial
+%end_unix = 1746563945810330; % End of Start High Trial
 
-start_unix = 1747324105084210; % End of High Trial
-end_unix = 1747324108834210; % End of Low Trial
+start_unix = 1746564209060360; % Beginning of End High Trial
+end_unix = 1746564220810360; % End of End High Trial
 
 
 % Edit this FILE NAME
@@ -41,8 +39,8 @@ raw_data(raw_data(:,2) <= 0, 2) = 0;
 
 
 % Parameters
-order = 3;              
-cutoff = 0.5;           
+order = 4;              
+cutoff = .5;           
 fs = 4;               
 
 Wn = cutoff / (fs/2);   
