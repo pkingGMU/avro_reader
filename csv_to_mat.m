@@ -10,8 +10,8 @@ data_file = fullfile(data_folder_path, 'eda.csv');
 full_raw_data = readmatrix(data_file);
 
 % Edit THESE TIMES
-start_unix = 1744730277151376;
-end_unix = 1744730278139142;
+start_unix = 1747319720046162;
+end_unix = 1747319747974771;
 
 % Edit this FILE NAME
 file_name = 'trial1_test';

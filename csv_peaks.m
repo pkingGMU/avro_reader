@@ -1,6 +1,8 @@
 clc
 clear
 
+addpath("XDF_functions/")
+
 % Paths
 data_folder_path = fullfile(pwd, 'output');
 data_file = fullfile(data_folder_path, 'eda.csv');
@@ -13,8 +15,8 @@ full_raw_data = readmatrix(data_file);
 %start_unix = 1746563941060330; % Beginning of Start High Trial
 %end_unix = 1746563945810330; % End of Start High Trial
 
-start_unix = 1746564209060360; % Beginning of End High Trial
-end_unix = 1746564220810360; % End of End High Trial
+start_unix = 1732043405627670; % Beginning of End High Trial
+end_unix = 1732044873127670; % End of End High Trial
 
 
 % Edit this FILE NAME
@@ -32,8 +34,11 @@ if start_idx > end_idx
     end_idx = temp;
 end
 
+% Use this line if Embrace
 raw_data = full_raw_data(start_idx:end_idx, :) / 1000000;
-%raw_data = full_raw_data(:, :) / 1000000;
+
+% Use this line if XDF
+raw_data = full_raw_data(start_idx:end_idx, :);
 
 raw_data(raw_data(:,2) <= 0, 2) = 0;
 
